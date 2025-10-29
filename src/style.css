@@ -832,3 +832,24 @@ footer .copyright {
   transform: scale(1.05);
 } 
 
+/* ===== Responsive for Mobile ===== */
+@media (max-width: 768px) {
+  #product-details {
+    width: 90%;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  #product-details img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  #product-details h2 {
+    font-size: 1.4rem;
+  }
+
+  #product-details p {
+    font-size: 0.95rem;
+  }
+}
