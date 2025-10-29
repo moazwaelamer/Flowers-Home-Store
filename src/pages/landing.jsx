@@ -14,7 +14,7 @@ const Landing = () => {
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 1500,
+    autoplaySpeed: 2500,
   };
 
   useEffect(() => {
