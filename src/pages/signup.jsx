@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../style.css";
 import { Link, useNavigate } from "react-router-dom";
 import { signupUser } from "../script";
-import  { useEffect } from "react";
- useEffect(() => {
-document.title = "Flowers Home"} , [document.body])
+
 const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
+
+  // تغيير عنوان الصفحة
+  useEffect(() => {
+    document.title = "Flowers Home";
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,7 +34,6 @@ const Signup = () => {
 
   return (
     <div>
-     
       <main>
         <div className="form-container">
           <h2>Create Account</h2>
@@ -66,8 +68,8 @@ const Signup = () => {
           </p>
         </div>
       </main>
-
     </div>
   );
 };
+
 export default Signup;

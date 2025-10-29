@@ -1,26 +1,29 @@
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { products } from "../script";
-import  { useEffect } from "react";
+
 const Graduation = () => {
-  const Graduation = products.Graduation;
- useEffect(() => {
-  document.title = "Flowers Home";
-}, []);
+  const graduationProducts = products.Graduation;
+
+  useEffect(() => {
+    document.title = "Flowers Home";
+  }, []);
+
   return (
     <div>
       <main>
-        <h1 style={{ textAlign: "center", margin: "30px 0" }}> Graduation </h1>
+        <h1 style={{ textAlign: "center", margin: "30px 0" }}>Graduation</h1>
 
-         <div className="products">
-          {Graduation.map((item) => (
+        <div className="products">
+          {graduationProducts.map((item) => (
             <div key={item.id} className="product-card">
               <img src={item.image} alt={item.title} />
               <h3>{item.title}</h3>
               <p>{item.description}</p>
 
               <div className="buttons">
-                 <Link to={`/product/${item.id}`}>
-                    <button className="details-btn">Details</button>
+                <Link to={`/product/${item.id}`}>
+                  <button className="details-btn">Details</button>
                 </Link>
               </div>
             </div>

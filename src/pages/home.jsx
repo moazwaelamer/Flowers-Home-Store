@@ -5,6 +5,12 @@ const Home = () => {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
 
+  // تعيين عنوان الصفحة
+  useEffect(() => {
+    document.title = "Flowers Home";
+  }, []); // ✅ مصحح
+
+  // تحميل الفئات
   useEffect(() => {
     const cats = [
       { name: "ChocoBoqute", path: "/ChocoBoqute", image: "/images/chocoboquet2.jpg" },
@@ -14,10 +20,8 @@ const Home = () => {
       { name: "ShabkaTrays", path: "/shabkatrays", image: "/images/shabka3.jpg" },
       { name: "Giftbox", path: "/giftbox", image: "/images/giftbox1.jpg" },
     ];
-    setCategories(cats);}, []);
-
-  useEffect(() => {
-document.title = "Flowers Home"} , [document.body])
+    setCategories(cats);
+  }, []);
 
   return (
     <div>
@@ -30,7 +34,8 @@ document.title = "Flowers Home"} , [document.body])
               key={index}
               className="product-card"
               onClick={() => navigate(cat.path)}
-              style={{ cursor: "pointer" }}>
+              style={{ cursor: "pointer" }}
+            >
               <img src={cat.image} alt={cat.name} />
               <h3>{cat.name}</h3>
               <p>Explore the latest {cat.name} lineup</p>
@@ -38,9 +43,10 @@ document.title = "Flowers Home"} , [document.body])
           ))}
         </div>
       </main>
-
     </div>
   );
 };
+
 export default Home;
+
 

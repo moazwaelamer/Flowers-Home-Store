@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { products } from "../script";
-import  { useEffect } from "react";
- useEffect(() => {
-document.title = "Flowers Home"} , [document.body])
+
 const Prodectdetatlis = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
 
+  // لتغيير عنوان الصفحة
+  useEffect(() => {
+    document.title = "Flowers Home";
+  }, []); // ✅ فاضي لأنك مش معتمد على متغيرات
+
+  // لجلب المنتج حسب id
   useEffect(() => {
     const allProducts = Object.values(products).flat();
     const found = allProducts.find((p) => p.id === parseInt(id));
@@ -66,3 +70,4 @@ const Prodectdetatlis = () => {
 };
 
 export default Prodectdetatlis;
+

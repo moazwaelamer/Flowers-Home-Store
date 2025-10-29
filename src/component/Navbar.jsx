@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import  { useEffect } from "react";
- useEffect(() => {
-document.title = "Flowers Home"} , [document.body])
+ 
 const Navbar = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // 👈 حالة لتحديد لو الشاشة موبايل
-
+ useEffect(() => {
+document.title = "Flowers Home"} , [document.body])
   const navigate = useNavigate();
 
   useEffect(() => {

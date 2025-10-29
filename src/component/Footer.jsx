@@ -1,7 +1,8 @@
       import  { useEffect } from "react";
-       useEffect(() => {
-      document.title = "Flowers Home"} , [document.body])
+
       const Footer = () => {
+              useEffect(() => {
+      document.title = "Flowers Home"} , [document.body])
         return (
           <footer>
             <div className="footer-container">

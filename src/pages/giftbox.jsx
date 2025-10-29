@@ -1,11 +1,14 @@
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { products } from "../script";
-import  { useEffect } from "react";
+
 const Giftbox = () => {
   const GiftboxProducts = products.Giftbox;
- useEffect(() => {
-  document.title = "Flowers Home";
-}, []);
+
+  useEffect(() => {
+    document.title = "Flowers Home";
+  }, []);
+
   return (
     <div>
       <main>
@@ -19,8 +22,8 @@ const Giftbox = () => {
               <p>{item.description}</p>
 
               <div className="buttons">
-                 <Link to={`/product/${item.id}`}>
-                    <button className="details-btn">Details</button>
+                <Link to={`/product/${item.id}`}>
+                  <button className="details-btn">Details</button>
                 </Link>
               </div>
             </div>

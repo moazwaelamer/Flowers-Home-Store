@@ -1,11 +1,13 @@
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { products } from "../script";
-import  { useEffect } from "react";
- useEffect(() => {
-document.title = "Flowers Home"} , [document.body])
 
 const Minibouquets = () => {
   const MinibouquetsProducts = products.MiniBouquets;
+
+  useEffect(() => {
+    document.title = "Flowers Home";
+  }, []); // ✅ داخل الكومبوننت
 
   return (
     <div>
@@ -20,8 +22,8 @@ const Minibouquets = () => {
               <p>{item.description}</p>
 
               <div className="buttons">
-                 <Link to={`/product/${item.id}`}>
-                    <button className="details-btn">Details</button>
+                <Link to={`/product/${item.id}`}>
+                  <button className="details-btn">Details</button>
                 </Link>
               </div>
             </div>
@@ -33,3 +35,4 @@ const Minibouquets = () => {
 };
 
 export default Minibouquets;
+
