@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../script";
-
+import  { useEffect } from "react";
+ useEffect(() => {
+document.title = "Flowers Home"} , [document.body])
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

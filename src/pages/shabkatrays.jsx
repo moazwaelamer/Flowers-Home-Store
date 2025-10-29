@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { products } from "../script";
-
+import  { useEffect } from "react";
+ useEffect(() => {
+document.title = "Flowers Home"} , [document.body])
 const ShabkaTrays = () => {
   const shabkatraysProducts = products.ShabkaTrays;
 

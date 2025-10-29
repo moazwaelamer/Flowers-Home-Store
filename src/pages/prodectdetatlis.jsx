@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { products } from "../script";
-
+import  { useEffect } from "react";
+ useEffect(() => {
+document.title = "Flowers Home"} , [document.body])
 const Prodectdetatlis = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);

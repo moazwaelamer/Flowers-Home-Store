@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { products } from "../script";
-
+import  { useEffect } from "react";
 const ChocoBoqute = () => {
   const ChocoBoquteProducts = products.ChocoBoqute;
-
+ useEffect(() => {
+document.title = "Flowers Home"} , [document.body])
   return (
     <div>
       <main>

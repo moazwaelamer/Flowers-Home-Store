@@ -1,3 +1,6 @@
+      import  { useEffect } from "react";
+       useEffect(() => {
+      document.title = "Flowers Home"} , [document.body])
       const Footer = () => {
         return (
           <footer>

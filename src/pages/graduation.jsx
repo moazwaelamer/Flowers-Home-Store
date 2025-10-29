@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { products } from "../script";
-
+import  { useEffect } from "react";
 const Graduation = () => {
   const Graduation = products.Graduation;
-
+ useEffect(() => {
+  document.title = "Flowers Home";
+}, []);
   return (
     <div>
       <main>

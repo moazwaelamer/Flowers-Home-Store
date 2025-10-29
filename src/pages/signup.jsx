@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "../style.css";
 import { Link, useNavigate } from "react-router-dom";
 import { signupUser } from "../script";
+import  { useEffect } from "react";
+ useEffect(() => {
+document.title = "Flowers Home"} , [document.body])
 const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");

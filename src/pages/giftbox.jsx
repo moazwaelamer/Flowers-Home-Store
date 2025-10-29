@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { products } from "../script";
-
+import  { useEffect } from "react";
 const Giftbox = () => {
   const GiftboxProducts = products.Giftbox;
-
+ useEffect(() => {
+  document.title = "Flowers Home";
+}, []);
   return (
     <div>
       <main>

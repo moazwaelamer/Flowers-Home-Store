@@ -1,5 +1,6 @@
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
+import  { useEffect } from "react";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { slides, products } from "../script"; 
@@ -15,6 +16,10 @@ const Landing = () => {
     autoplay: true,
     autoplaySpeed: 1500,
   };
+  useEffect(() => {
+  document.title = "Flowers Home";
+}, []);
+
 const categoriesKeys = ["ChocoBoqute", "Giftbox", "Graduation", "birthdays", "MiniBouquets", "ShabkaTrays"];
 const featuredProducts = categoriesKeys.flatMap(key => (products[key] || []).slice(0,1));
 
