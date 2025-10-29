@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
- 
+
 const Navbar = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // 👈 حالة لتحديد لو الشاشة موبايل
- useEffect(() => {
-document.title = "Flowers Home"} , [document.body])
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Flowers Home";
+  }, []);
 
   useEffect(() => {
     const savedUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -15,7 +17,6 @@ document.title = "Flowers Home"} , [document.body])
       setCurrentUser(savedUser.username);
     }
 
-    // ✅ نتابع تغير حجم الشاشة
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -87,7 +88,7 @@ document.title = "Flowers Home"} , [document.body])
       >
         <li>
           <Link
-            to="/home"
+            to="/landing"
             style={{ textDecoration: "none", color: "#C2185B", fontWeight: "bold" }}
             onMouseEnter={(e) => (e.target.style.color = "#D81B60")}
             onMouseLeave={(e) => (e.target.style.color = "#C2185B")}
@@ -97,9 +98,24 @@ document.title = "Flowers Home"} , [document.body])
           </Link>
         </li>
 
+       
+        <li>
+          <Link
+            to="/home"
+            style={{ textDecoration: "none", color: "#C2185B", fontWeight: "bold" }}
+            onMouseEnter={(e) => (e.target.style.color = "#D81B60")}
+            onMouseLeave={(e) => (e.target.style.color = "#C2185B")}
+            onClick={() => setMenuOpen(false)}
+          >
+            Categories
+          </Link>
+        </li>
+
         {currentUser ? (
           <>
-            <li style={{ color: "#C2185B", fontWeight: "bold" }}>👋 Hello, {currentUser}</li>
+            <li style={{ color: "#C2185B", fontWeight: "bold" }}>
+              👋 Hello, {currentUser}
+            </li>
             <li>
               <button
                 onClick={handleLogout}
@@ -151,4 +167,5 @@ document.title = "Flowers Home"} , [document.body])
 };
 
 export default Navbar;
+
 
